@@ -1,0 +1,1219 @@
+/*  Mixins - Start */
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Gravitas+One");
+/*  Mixins - End */
+/* Variables - Start */
+/* Variables - End */
+.material-icons {
+  font-size: 18px;
+  margin-left: 10px; }
+
+.navbar-nav i {
+  color: #FFFFFF; }
+
+.image-scroller {
+  margin-top: 20px;
+  min-height: 350px !important;
+  max-height: 350px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 14px 0 #333333 inset; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Dosis", sans-serif !important;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+  white-space: normal; }
+
+/* Set width on the form input elements since they're 100% wide by default */
+input, select, textarea {
+  max-width: 280px; }
+
+#socialLoginList p {
+  text-align: center; }
+  #socialLoginList p button {
+    width: 267px;
+    height: 40px;
+    margin: 20px 10px;
+    background-color: #345678;
+    background-image: url(../Images/../Images/general_logos/social-media-login.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75); }
+    .no-svg #socialLoginList p button {
+      background-image: url(../Images/../Images/general_logos/social-media-login.png.png);
+      background-repeat: no-repeat;
+      background-position: 0 0; }
+      @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        .no-svg #socialLoginList p button {
+          background-image: url(../Images/../Images/general_logos/social-media-login.png@2x.png);
+          background-repeat: no-repeat;
+          background-position: 0 0; } }
+    #socialLoginList p button #Facebook {
+      background-position: 0 0; }
+    #socialLoginList p button #Twitter {
+      background-position: 0 -80px; }
+    #socialLoginList p button #Microsoft {
+      background-position: 0 -120px; }
+    #socialLoginList p button #LinkedIn {
+      background-position: 0 -160px; }
+    #socialLoginList p button #GitHub {
+      background-position: 0 -200px; }
+
+#socialLoginList > p > #Google {
+  background-position: 0px -40px; }
+
+#socialLoginList > p > #Google:hover {
+  background-position: -267px -40px; }
+
+#socialLoginList > p > #Google:active {
+  background-position: -534px -40px; }
+
+#socialLoginList > p > #Facebook {
+  background-position: 0px 0px; }
+
+#socialLoginList > p > #Facebook:hover {
+  background-position: -267px 0px; }
+
+#socialLoginList > p > #Facebook:active {
+  background-position: -534px 0px; }
+
+#socialLoginList > p > #Twitter {
+  background-position: 0px -80px; }
+
+#socialLoginList > p > #Twitter:hover {
+  background-position: -267px -80px; }
+
+#socialLoginList > p > #Twitter:active {
+  background-position: -534px -80px; }
+
+#socialLoginList > p > #Microsoft {
+  background-position: 0px -120px; }
+
+#socialLoginList > p > #Microsoft:hover {
+  background-position: -267px -120px; }
+
+#socialLoginList > p > #Microsoft:active {
+  background-position: -534px -120px; }
+
+#socialLoginList > p > #LinkedIn {
+  background-position: 0px -160px; }
+
+#socialLoginList > p > #LinkedIn:hover {
+  background-position: -267px -160px; }
+
+#socialLoginList > p > #LinkedIn:active {
+  background-position: -534px -160px; }
+
+#socialLoginList > p > #GitHub {
+  background-position: 0px -200px; }
+
+#socialLoginList > p > #GitHub:hover {
+  background-position: -267px -200px; }
+
+#socialLoginList > p > #GitHub:active {
+  background-position: -534px -200px; }
+
+hr {
+  clear: both; }
+
+.heading {
+  text-align: center; }
+
+.header {
+  color: #333333;
+  font-size: 32px;
+  font-size: 3.2rem;
+  line-height: 66px; }
+  .header:hover {
+    text-decoration: none; }
+
+.header-location {
+  font-size: 16px;
+  font-size: 1.6rem;
+  margin-left: 10px; }
+
+.body-content {
+  margin-top: 26px;
+  margin-bottom: 110px; }
+
+/* Form Styling - Start */
+#loginForm {
+  font: "Dosis", sans-serif;
+  margin: 10px auto;
+  padding: 16px;
+  background: #F7F7F7; }
+  #loginForm label {
+    margin-right: 10px; }
+  #loginForm h1 {
+    background-image: url(../Images/../Images/general_logos/form-header.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    /*@include topLinearGradient($mid-blue, $dark-blue);*/
+    padding: 20px 0;
+    font-size: 24px;
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-align: center;
+    color: #FFFFFF;
+    margin: -16px -16px 16px -16px; }
+    .no-svg #loginForm h1 {
+      background-image: url(../Images/../Images/general_logos/form-header.png.png);
+      background-repeat: no-repeat;
+      background-position: center center; }
+      @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        .no-svg #loginForm h1 {
+          background-image: url(../Images/../Images/general_logos/form-header.png@2x.png);
+          background-repeat: no-repeat;
+          background-position: center center; } }
+  #loginForm input[type="text"],
+  #loginForm input[type="tel"],
+  #loginForm input[type="date"],
+  #loginForm input[type="datetime"],
+  #loginForm input[type="email"],
+  #loginForm input[type="file"],
+  #loginForm input[type="number"],
+  #loginForm input[type="search"],
+  #loginForm input[type="time"],
+  #loginForm input[type="url"],
+  #loginForm input[type="password"],
+  #loginForm label,
+  #loginForm textarea,
+  #loginForm select {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #FFFFFF;
+    margin-bottom: 4%;
+    border: none;
+    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75) inset;
+    padding: 2%;
+    color: #555555;
+    font-family: "Dosis", sans-serif; }
+  #loginForm input[type="text"]:focus,
+  #loginForm input[type="tel"]:focus,
+  #loginForm input[type="date"]:focus,
+  #loginForm input[type="datetime"]:focus,
+  #loginForm input[type="email"]:focus,
+  #loginForm input[type="file"]:focus,
+  #loginForm input[type="number"]:focus,
+  #loginForm input[type="search"]:focus,
+  #loginForm input[type="time"]:focus,
+  #loginForm input[type="password"]:focus,
+  #loginForm input[type="url"]:focus,
+  #loginForm textarea:focus,
+  #loginForm select:focus {
+    box-shadow: 0 0 5px #345678;
+    border: 1px solid #345678; }
+  #loginForm input[type="submit"],
+  #loginForm input[type="button"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #555555 !important;
+    background: -moz-linear-gradient(top, #555555, #000000) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#555555), color-stop(#000000)) !important;
+    background: -webkit-linear-gradient(top, #555555, #000000) !important;
+    background: -o-linear-gradient(top, #555555, #000000) !important;
+    background: -ms-linear-gradient(top, #555555, #000000) !important;
+    background: linear-gradient(to bottom, #555555, #000000) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+    border-bottom: 2px solid #345678;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #FFFFFF; }
+    #loginForm input[type="submit"]:hover,
+    #loginForm input[type="button"]:hover {
+      background: #000000 !important;
+      background: -moz-linear-gradient(top, #000000, #555555) !important;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(#000000), color-stop(#555555)) !important;
+      background: -webkit-linear-gradient(top, #000000, #555555) !important;
+      background: -o-linear-gradient(top, #000000, #555555) !important;
+      background: -ms-linear-gradient(top, #000000, #555555) !important;
+      background: linear-gradient(to bottom, #000000, #555555) !important;
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important; }
+  #loginForm .rememberMe {
+    background: none !important;
+    width: auto !important;
+    border: none !important; }
+
+#contactForm {
+  font: "Dosis", sans-serif;
+  max-width: 75%;
+  padding: 16px;
+  background: #F7F7F7; }
+  #contactForm label {
+    margin-right: 10px; }
+  #contactForm h1 {
+    background-image: url(../Images/../Images/general_logos/form-header.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    /*@include topLinearGradient($mid-blue, $dark-blue);*/
+    padding: 20px 0;
+    font-size: 40px;
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    color: #FFFFFF;
+    margin: -16px -16px 16px -16px; }
+    .no-svg #contactForm h1 {
+      background-image: url(../Images/../Images/general_logos/form-header.png.png);
+      background-repeat: no-repeat;
+      background-position: center center; }
+      @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        .no-svg #contactForm h1 {
+          background-image: url(../Images/../Images/general_logos/form-header.png@2x.png);
+          background-repeat: no-repeat;
+          background-position: center center; } }
+  #contactForm input[type="text"],
+  #contactForm input[type="tel"],
+  #contactForm input[type="date"],
+  #contactForm input[type="datetime"],
+  #contactForm input[type="email"],
+  #contactForm input[type="number"],
+  #contactForm input[type="search"],
+  #contactForm input[type="time"],
+  #contactForm input[type="url"],
+  #contactForm input[type="password"],
+  #contactForm textarea,
+  #contactForm select {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+    font-size: 1.8rem;
+    background: #FFFFFF;
+    margin-bottom: 2%;
+    border: none;
+    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75) inset;
+    padding: 2%;
+    color: #555555;
+    font-family: "Dosis", sans-serif; }
+  #contactForm input[type="text"]:focus,
+  #contactForm input[type="tel"]:focus,
+  #contactForm input[type="date"]:focus,
+  #contactForm input[type="datetime"]:focus,
+  #contactForm input[type="email"]:focus,
+  #contactForm input[type="number"]:focus,
+  #contactForm input[type="search"]:focus,
+  #contactForm input[type="time"]:focus,
+  #contactForm input[type="password"]:focus,
+  #contactForm input[type="url"]:focus,
+  #contactForm textarea:focus,
+  #contactForm select:focus {
+    box-shadow: 0 0 5px #345678;
+    border: 1px solid #345678; }
+  #contactForm input[type="submit"],
+  #contactForm input[type="button"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 20px;
+    font-size: 2rem;
+    width: 100%;
+    padding: 1.5%;
+    background: #555555 !important;
+    background: -moz-linear-gradient(top, #555555, #000000) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#555555), color-stop(#000000)) !important;
+    background: -webkit-linear-gradient(top, #555555, #000000) !important;
+    background: -o-linear-gradient(top, #555555, #000000) !important;
+    background: -ms-linear-gradient(top, #555555, #000000) !important;
+    background: linear-gradient(to bottom, #555555, #000000) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+    border-bottom: 2px solid #345678;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #FFFFFF; }
+  #contactForm input[type="submit"]:hover,
+  #contactForm input[type="button"]:hover {
+    background: #000000 !important;
+    background: -moz-linear-gradient(top, #000000, #555555) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#000000), color-stop(#555555)) !important;
+    background: -webkit-linear-gradient(top, #000000, #555555) !important;
+    background: -o-linear-gradient(top, #000000, #555555) !important;
+    background: -ms-linear-gradient(top, #000000, #555555) !important;
+    background: linear-gradient(to bottom, #000000, #555555) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important; }
+  #contactForm textarea {
+    min-height: 150px; }
+
+.search-box {
+  font: "Dosis", sans-serif;
+  max-width: 75%;
+  padding: 16px;
+  background: #F7F7F7;
+  margin-top: 20px; }
+  .search-box label {
+    margin-right: 10px; }
+  .search-box h1 {
+    background-image: url(../Images/../Images/general_logos/form-header.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    /*@include topLinearGradient($mid-blue, $dark-blue);*/
+    padding: 20px 0;
+    font-size: 40px;
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    color: #FFFFFF;
+    margin: -16px -16px 16px -16px; }
+    .no-svg .search-box h1 {
+      background-image: url(../Images/../Images/general_logos/form-header.png.png);
+      background-repeat: no-repeat;
+      background-position: center center; }
+      @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        .no-svg .search-box h1 {
+          background-image: url(../Images/../Images/general_logos/form-header.png@2x.png);
+          background-repeat: no-repeat;
+          background-position: center center; } }
+  .search-box input[type="text"],
+  .search-box input[type="tel"],
+  .search-box input[type="date"],
+  .search-box input[type="datetime"],
+  .search-box input[type="email"],
+  .search-box input[type="number"],
+  .search-box input[type="search"],
+  .search-box input[type="time"],
+  .search-box input[type="url"],
+  .search-box input[type="password"],
+  .search-box textarea,
+  .search-box select {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+    font-size: 1.8rem;
+    background: #FFFFFF;
+    margin-bottom: 2%;
+    border: none;
+    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75) inset;
+    padding: 2%;
+    color: #555555;
+    font-family: "Dosis", sans-serif; }
+  .search-box input[type="text"]:focus,
+  .search-box input[type="tel"]:focus,
+  .search-box input[type="date"]:focus,
+  .search-box input[type="datetime"]:focus,
+  .search-box input[type="email"]:focus,
+  .search-box input[type="number"]:focus,
+  .search-box input[type="search"]:focus,
+  .search-box input[type="time"]:focus,
+  .search-box input[type="password"]:focus,
+  .search-box input[type="url"]:focus,
+  .search-box textarea:focus,
+  .search-box select:focus {
+    box-shadow: 0 0 5px #345678;
+    border: 1px solid #345678; }
+  .search-box input[type="submit"],
+  .search-box input[type="button"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 20px;
+    font-size: 2rem;
+    width: 100%;
+    padding: 1.5%;
+    background: #555555 !important;
+    background: -moz-linear-gradient(top, #555555, #000000) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#555555), color-stop(#000000)) !important;
+    background: -webkit-linear-gradient(top, #555555, #000000) !important;
+    background: -o-linear-gradient(top, #555555, #000000) !important;
+    background: -ms-linear-gradient(top, #555555, #000000) !important;
+    background: linear-gradient(to bottom, #555555, #000000) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+    border-bottom: 2px solid #345678;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #FFFFFF; }
+  .search-box input[type="submit"]:hover,
+  .search-box input[type="button"]:hover {
+    background: #000000 !important;
+    background: -moz-linear-gradient(top, #000000, #555555) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#000000), color-stop(#555555)) !important;
+    background: -webkit-linear-gradient(top, #000000, #555555) !important;
+    background: -o-linear-gradient(top, #000000, #555555) !important;
+    background: -ms-linear-gradient(top, #000000, #555555) !important;
+    background: linear-gradient(to bottom, #000000, #555555) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important; }
+
+.profile-settings label {
+  border: 2px groove threedface;
+  padding: 4px 6px;
+  margin: 10px 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.profile-settings textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 300px;
+  max-height: 300px; }
+
+.profile-settings input[type="text"],
+.profile-settings input[type="tel"],
+.profile-settings input[type="date"],
+.profile-settings input[type="datetime"],
+.profile-settings input[type="email"],
+.profile-settings input[type="number"],
+.profile-settings input[type="search"],
+.profile-settings input[type="time"],
+.profile-settings input[type="url"],
+.profile-settings input[type="password"],
+.profile-settings textarea,
+.profile-settings select {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  font-size: 18px;
+  font-size: 1.8rem;
+  background: #FFFFFF;
+  margin-bottom: 2%;
+  border: 1px solid #ccc;
+  padding: 2%;
+  color: #555555;
+  font-family: "Dosis", sans-serif; }
+
+.profile-settings input[type="text"]:focus,
+.profile-settings input[type="tel"]:focus,
+.profile-settings input[type="date"]:focus,
+.profile-settings input[type="datetime"]:focus,
+.profile-settings input[type="email"]:focus,
+.profile-settings input[type="number"]:focus,
+.profile-settings input[type="search"]:focus,
+.profile-settings input[type="time"]:focus,
+.profile-settings input[type="password"]:focus,
+.profile-settings input[type="url"]:focus,
+.profile-settings textarea:focus,
+.profile-settings select:focus {
+  box-shadow: 0 0 5px #345678;
+  border: 1px solid #345678; }
+
+.profile-settings input[type="submit"],
+.profile-settings input[type="button"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 20px;
+  font-size: 2rem;
+  width: 100%;
+  padding: 1.5%;
+  background: #555555 !important;
+  background: -moz-linear-gradient(top, #555555, #000000) !important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(#555555), color-stop(#000000)) !important;
+  background: -webkit-linear-gradient(top, #555555, #000000) !important;
+  background: -o-linear-gradient(top, #555555, #000000) !important;
+  background: -ms-linear-gradient(top, #555555, #000000) !important;
+  background: linear-gradient(to bottom, #555555, #000000) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+  border-bottom: 2px solid #345678;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #FFFFFF; }
+
+.profile-settings input[type="submit"]:hover,
+.profile-settings input[type="button"]:hover {
+  background: #000000 !important;
+  background: -moz-linear-gradient(top, #000000, #555555) !important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(#000000), color-stop(#555555)) !important;
+  background: -webkit-linear-gradient(top, #000000, #555555) !important;
+  background: -o-linear-gradient(top, #000000, #555555) !important;
+  background: -ms-linear-gradient(top, #000000, #555555) !important;
+  background: linear-gradient(to bottom, #000000, #555555) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important; }
+
+#bookingForm {
+  font: "Dosis", sans-serif;
+  padding: 16px;
+  background: #F7F7F7; }
+  #bookingForm label {
+    margin-right: 10px; }
+  #bookingForm h1 {
+    background-image: url(../Images/../Images/general_logos/form-header.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    /*@include topLinearGradient($mid-blue, $dark-blue);*/
+    padding: 20px 0;
+    font-size: 40px;
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    color: #FFFFFF;
+    margin: -16px -16px 16px -16px; }
+    .no-svg #bookingForm h1 {
+      background-image: url(../Images/../Images/general_logos/form-header.png.png);
+      background-repeat: no-repeat;
+      background-position: center center; }
+      @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        .no-svg #bookingForm h1 {
+          background-image: url(../Images/../Images/general_logos/form-header.png@2x.png);
+          background-repeat: no-repeat;
+          background-position: center center; } }
+  #bookingForm input[type="text"],
+  #bookingForm input[type="tel"],
+  #bookingForm input[type="date"],
+  #bookingForm input[type="datetime"],
+  #bookingForm input[type="email"],
+  #bookingForm input[type="number"],
+  #bookingForm input[type="search"],
+  #bookingForm input[type="time"],
+  #bookingForm input[type="url"],
+  #bookingForm input[type="password"],
+  #bookingForm textarea,
+  #bookingForm select {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+    font-size: 1.8rem;
+    background: #FFFFFF;
+    margin-bottom: 2%;
+    border: none;
+    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75) inset;
+    padding: 1%;
+    color: #555555;
+    font-family: "Dosis", sans-serif; }
+  #bookingForm input[type="text"]:focus,
+  #bookingForm input[type="tel"]:focus,
+  #bookingForm input[type="date"]:focus,
+  #bookingForm input[type="datetime"]:focus,
+  #bookingForm input[type="email"]:focus,
+  #bookingForm input[type="number"]:focus,
+  #bookingForm input[type="search"]:focus,
+  #bookingForm input[type="time"]:focus,
+  #bookingForm input[type="password"]:focus,
+  #bookingForm input[type="url"]:focus,
+  #bookingForm textarea:focus,
+  #bookingForm select:focus {
+    box-shadow: 0 0 5px #345678;
+    border: 1px solid #345678; }
+  #bookingForm input[type="submit"],
+  #bookingForm input[type="button"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 20px;
+    font-size: 2rem;
+    width: 100%;
+    padding: 1.5%;
+    background: #555555 !important;
+    background: -moz-linear-gradient(top, #555555, #000000) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#555555), color-stop(#000000)) !important;
+    background: -webkit-linear-gradient(top, #555555, #000000) !important;
+    background: -o-linear-gradient(top, #555555, #000000) !important;
+    background: -ms-linear-gradient(top, #555555, #000000) !important;
+    background: linear-gradient(to bottom, #555555, #000000) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+    border-bottom: 2px solid #345678;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #FFFFFF; }
+  #bookingForm input[type="submit"]:hover,
+  #bookingForm input[type="button"]:hover {
+    background: #000000 !important;
+    background: -moz-linear-gradient(top, #000000, #555555) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#000000), color-stop(#555555)) !important;
+    background: -webkit-linear-gradient(top, #000000, #555555) !important;
+    background: -o-linear-gradient(top, #000000, #555555) !important;
+    background: -ms-linear-gradient(top, #000000, #555555) !important;
+    background: linear-gradient(to bottom, #000000, #555555) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important; }
+  #bookingForm textarea {
+    min-height: 150px; }
+
+#reviewForm {
+  margin-top: 20px;
+  font: "Dosis", sans-serif;
+  padding: 16px;
+  background: #F7F7F7; }
+  #reviewForm label {
+    margin-right: 10px; }
+  #reviewForm h1 {
+    background-image: url(../Images/../Images/general_logos/form-header.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    /*@include topLinearGradient($mid-blue, $dark-blue);*/
+    padding: 20px 0;
+    font-size: 40px;
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    color: #FFFFFF;
+    margin: -16px -16px 16px -16px; }
+    .no-svg #reviewForm h1 {
+      background-image: url(../Images/../Images/general_logos/form-header.png.png);
+      background-repeat: no-repeat;
+      background-position: center center; }
+      @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        .no-svg #reviewForm h1 {
+          background-image: url(../Images/../Images/general_logos/form-header.png@2x.png);
+          background-repeat: no-repeat;
+          background-position: center center; } }
+  #reviewForm input[type="text"],
+  #reviewForm input[type="tel"],
+  #reviewForm input[type="date"],
+  #reviewForm input[type="datetime"],
+  #reviewForm input[type="email"],
+  #reviewForm input[type="number"],
+  #reviewForm input[type="search"],
+  #reviewForm input[type="time"],
+  #reviewForm input[type="url"],
+  #reviewForm input[type="password"],
+  #reviewForm textarea,
+  #reviewForm select {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+    font-size: 1.8rem;
+    background: #FFFFFF;
+    margin-bottom: 2%;
+    border: none;
+    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.75) inset;
+    padding: 1%;
+    color: #555555;
+    font-family: "Dosis", sans-serif; }
+  #reviewForm input[type="text"]:focus,
+  #reviewForm input[type="tel"]:focus,
+  #reviewForm input[type="date"]:focus,
+  #reviewForm input[type="datetime"]:focus,
+  #reviewForm input[type="email"]:focus,
+  #reviewForm input[type="number"]:focus,
+  #reviewForm input[type="search"]:focus,
+  #reviewForm input[type="time"]:focus,
+  #reviewForm input[type="password"]:focus,
+  #reviewForm input[type="url"]:focus,
+  #reviewForm textarea:focus,
+  #reviewForm select:focus {
+    box-shadow: 0 0 5px #345678;
+    border: 1px solid #345678; }
+  #reviewForm input[type="submit"],
+  #reviewForm input[type="button"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size: 20px;
+    font-size: 2rem;
+    width: 100%;
+    padding: 1.5%;
+    background: #555555 !important;
+    background: -moz-linear-gradient(top, #555555, #000000) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#555555), color-stop(#000000)) !important;
+    background: -webkit-linear-gradient(top, #555555, #000000) !important;
+    background: -o-linear-gradient(top, #555555, #000000) !important;
+    background: -ms-linear-gradient(top, #555555, #000000) !important;
+    background: linear-gradient(to bottom, #555555, #000000) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+    border-bottom: 2px solid #345678;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #FFFFFF; }
+  #reviewForm input[type="submit"]:hover,
+  #reviewForm input[type="button"]:hover {
+    background: #000000 !important;
+    background: -moz-linear-gradient(top, #000000, #555555) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#000000), color-stop(#555555)) !important;
+    background: -webkit-linear-gradient(top, #000000, #555555) !important;
+    background: -o-linear-gradient(top, #000000, #555555) !important;
+    background: -ms-linear-gradient(top, #000000, #555555) !important;
+    background: linear-gradient(to bottom, #000000, #555555) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important; }
+  #reviewForm textarea {
+    min-height: 224px;
+    max-height: 224px; }
+
+.custom-label {
+  font-size: 24px;
+  font-size: 2.4rem;
+  padding: 4px;
+  font-weight: normal; }
+
+.custom-dropdown {
+  background: #FFFFFF !important;
+  background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE) !important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(#FFFFFF), color-stop(#EEEEEE)) !important;
+  background: -webkit-linear-gradient(top, #FFFFFF, #EEEEEE) !important;
+  background: -o-linear-gradient(top, #FFFFFF, #EEEEEE) !important;
+  background: -ms-linear-gradient(top, #FFFFFF, #EEEEEE) !important;
+  background: linear-gradient(to bottom, #FFFFFF, #EEEEEE) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+  font-size: 20px;
+  font-size: 2rem;
+  padding: 4px;
+  margin: 12px 0;
+  font-weight: bold; }
+
+.custom-text-input {
+  font-size: 20px;
+  font-size: 2rem;
+  padding: 3px;
+  margin: 12px 0; }
+
+.custom-text-button {
+  background: #FFFFFF !important;
+  background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE) !important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(#FFFFFF), color-stop(#EEEEEE)) !important;
+  background: -webkit-linear-gradient(top, #FFFFFF, #EEEEEE) !important;
+  background: -o-linear-gradient(top, #FFFFFF, #EEEEEE) !important;
+  background: -ms-linear-gradient(top, #FFFFFF, #EEEEEE) !important;
+  background: linear-gradient(to bottom, #FFFFFF, #EEEEEE) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+  font-size: 20px;
+  font-size: 2rem;
+  padding: 3px;
+  margin: 12px 0; }
+
+.radio-buttons {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  font-size: 18px;
+  font-size: 1.8rem;
+  background: #FFFFFF;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 0.5%;
+  color: #555555;
+  font-family: "Dosis", sans-serif; }
+  .radio-buttons dd {
+    display: inline-block;
+    font-size: 14px;
+    font-size: 1.4rem;
+    padding: 1% 10% 1% 0; }
+  .radio-buttons dt {
+    display: inline-block;
+    padding: 1%; }
+
+/* Form Styling - End */
+.error {
+  color: #FF0000 !important; }
+
+.avatar {
+  max-width: 100px;
+  max-height: 100px; }
+
+.account-settings dt {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 50px;
+  text-align: left;
+  width: 220px !important;
+  padding: 0 20px 0 0; }
+
+.account-settings dd {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 50px;
+  text-align: left; }
+
+.profile-settings dt {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 36px;
+  text-align: left;
+  width: 220px !important;
+  padding: 0 20px 0 0; }
+
+.profile-settings dd {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 36px;
+  text-align: left; }
+
+.profile-content {
+  white-space: pre-line; }
+
+.profile-body h2 {
+  font-size: 36px;
+  font-size: 3.6rem; }
+
+.profile-body p {
+  font-size: 18px;
+  font-size: 1.8rem; }
+
+.book-company {
+  float: right;
+  margin: 18px 0 0 0;
+  background-color: #456789;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-size: 1.8rem; }
+  .book-company:hover {
+    background-color: #123456;
+    color: #FFFFFF !important; }
+
+.book-company-small {
+  float: right;
+  margin: 0;
+  background-color: #456789;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold !important;
+  min-width: 150px;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+  .book-company-small:hover {
+    background-color: #123456;
+    color: #FFFFFF !important; }
+
+.main-image {
+  min-width: 970px;
+  max-width: 970px;
+  min-height: 727.5px;
+  max-height: 727.5px;
+  margin: 0 auto;
+  background-size: auto 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  opacity: 0.9; }
+  .main-image:hover {
+    opacity: 1;
+    cursor: pointer; }
+
+.profile-images {
+  width: 970px;
+  margin: 0 auto; }
+  .profile-images img {
+    width: 10%;
+    margin: 2px 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.9; }
+  .profile-images img:hover {
+    opacity: 1; }
+
+.profile-body dl, .profile-body dt, .profile-body dd {
+  display: block !important;
+  vertical-align: top;
+  font-size: 18px;
+  font-size: 1.8rem; }
+
+.profile-body .dl-headings {
+  font-weight: bold; }
+
+.profile-body img {
+  min-width: 50px;
+  max-width: 50px;
+  min-height: 50px;
+  max-height: 50px; }
+
+.main-profile-header {
+  font-size: 66px;
+  font-size: 6.6rem; }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  box-shadow: 0px -6px 12px 0 rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 100;
+  background-image: url(../Images/../Images/header-footer.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto; }
+  .no-svg footer {
+    background-image: url(../Images/../Images/header-footer.jpg.png);
+    background-repeat: no-repeat;
+    background-position: center bottom; }
+    @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      .no-svg footer {
+        background-image: url(../Images/../Images/header-footer.jpg@2x.png);
+        background-repeat: no-repeat;
+        background-position: center bottom; } }
+  footer P {
+    margin: 32px 0 0 0;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    font-size: 1.6rem; }
+    footer P a {
+      color: #FFFFFF !important; }
+
+.profile-btn {
+  border: 1px solid #333333;
+  padding: 3px 12px 6px 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  color: #FFFFFF;
+  background: #555555 !important;
+  background: -moz-linear-gradient(top, #555555, #000000) !important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(#555555), color-stop(#000000)) !important;
+  background: -webkit-linear-gradient(top, #555555, #000000) !important;
+  background: -o-linear-gradient(top, #555555, #000000) !important;
+  background: -ms-linear-gradient(top, #555555, #000000) !important;
+  background: linear-gradient(to bottom, #555555, #000000) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important; }
+  .profile-btn:hover {
+    background: #000000 !important;
+    background: -moz-linear-gradient(top, #000000, #555555) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(#000000), color-stop(#555555)) !important;
+    background: -webkit-linear-gradient(top, #000000, #555555) !important;
+    background: -o-linear-gradient(top, #000000, #555555) !important;
+    background: -ms-linear-gradient(top, #000000, #555555) !important;
+    background: linear-gradient(to bottom, #000000, #555555) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$proper-black',GradientType=0 ) !important;
+    color: #FFFFFF;
+    text-decoration: none; }
+
+.add-profile-image .updateProfileImage {
+  font-size: 14px;
+  font-size: 1.4rem;
+  background: #333333 !important;
+  color: #FFFFFF !important;
+  padding: 0 10px;
+  display: block; }
+
+.add-profile-image label {
+  line-height: 20px; }
+
+.image-scroller {
+  position: relative;
+  overflow: hidden; }
+  .image-scroller img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10000; }
+
+.overlay-image {
+  min-width: 95%;
+  min-height: 95%;
+  background-size: auto 100%;
+  background-position: center center;
+  opacity: 1; }
+
+.reviews dt, .reviews dd {
+  display: block !important;
+  line-height: 36px; }
+
+.review-comment {
+  white-space: pre-line;
+  line-height: 24px !important; }
+
+.scores {
+  position: absolute;
+  font-weight: bold;
+  margin: 0 0 0 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 2px 0;
+  width: 100px;
+  height: 30px;
+  line-height: 24px; }
+
+.scores:after {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  padding: 2px 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: -4px -4px 8px -4px rgba(0, 0, 0, 0.75) inset; }
+
+.score_1:after, .score_2:after {
+  content: "Poor";
+  background-color: #FF0000; }
+
+.score_3:after, .score_4:after {
+  content: "Fair";
+  background-color: #FF7700; }
+
+.score_5:after, .score_6:after {
+  content: "Average";
+  background-color: #FFFF00; }
+
+.score_7:after, .score_8:after {
+  content: "Good";
+  background-color: #00FF00; }
+
+.score_9:after, .score_10:after {
+  content: "Excellent";
+  background-color: #00FF00; }
+
+.add-review {
+  margin: -4.2rem 0 0 0;
+  background-color: #456789;
+  color: #FFFFFF; }
+  .add-review:hover {
+    background-color: #123456;
+    color: #FFFFFF !important; }
+
+.br-widget {
+  height: 42px;
+  white-space: nowrap; }
+  .br-widget a {
+    font: normal normal normal 24px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    margin-right: 6px; }
+  .br-widget a:after {
+    content: '\f006';
+    color: #d2d2d2; }
+  .br-widget a.br-active:after {
+    content: '\f005';
+    color: #EDB867; }
+  .br-widget a.br-selected:after {
+    content: '\f005';
+    color: #FFD700; }
+  .br-widget a.br-fractional:after {
+    content: '\f123';
+    color: #EDB867; }
+  .br-widget .br-current-rating {
+    display: none; }
+
+.br-readonly a {
+  cursor: default; }
+
+.br-reverse a.br-fractional {
+  display: inline-block;
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH"; }
+
+@media print {
+  .br-widget a:after {
+    content: '\f006';
+    color: #333333; }
+  .br-widget a.br-active:after,
+  .br-widget a.br-selected:after {
+    content: '\f005';
+    color: #333333; }
+  .br-widget a.br-fractional:after {
+    content: '\f123';
+    color: #333333; } }
+
+/* Bootstrap Styling Overwrites - Start */
+.navbar {
+  background-image: url(../Images/../Images/header-footer.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+  box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.5); }
+  .no-svg .navbar {
+    background-image: url(../Images/../Images/header-footer.jpg.png);
+    background-repeat: no-repeat;
+    background-position: center top; }
+    @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      .no-svg .navbar {
+        background-image: url(../Images/../Images/header-footer.jpg@2x.png);
+        background-repeat: no-repeat;
+        background-position: center top; } }
+
+.navbar-collapse {
+  box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.5); }
+  .navbar-collapse a {
+    color: #FFFFFF !important; }
+
+.navbar-nav li a {
+  color: #FFFFFF !important;
+  font-size: 18px;
+  font-size: 1.8rem;
+  display: inline-block !important;
+  padding: 25px 15px !important; }
+  .navbar-nav li a:hover {
+    text-shadow: 1px 1px 1px #FFFFFF;
+    font-weight: bold;
+    background: none !important; }
+
+input, select, textarea {
+  max-width: 1000px; }
+
+/* Bootstrap Styling Overwrites - End */
+
+/*# sourceMappingURL=styles.css.map */

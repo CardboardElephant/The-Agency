@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Url = Request.RawUrl;
+}
+<div class="main-view">
+    <div class="site-error">
+        <h2>
+            Sorry...
+        </h2>
+        <h3>
+            The resource you were looking for (<span class="error-stand-out">@ViewBag.Url</span>) doesn't exist.
+        </h3>
+    </div>
+</div>

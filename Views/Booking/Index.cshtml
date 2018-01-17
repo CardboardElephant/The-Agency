@@ -1,0 +1,34 @@
+﻿@model TheAgency.Models.BookingViewModel
+<hr />
+<div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>
+<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+    <section id="bookingForm">
+        <h1>@Model.Entertainment's Booking Form</h1>
+        @using (Html.BeginForm("Book", "Booking", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.LabelFor(m => m.EventDate)
+            @Html.ValidationMessageFor(m => m.EventDate, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.EventDate, new { @type = "date", @title = "Event Date (Required)", data_toggle = "tooltip" })
+            @Html.LabelFor(m => m.EventStart)
+            @Html.ValidationMessageFor(m => m.EventStart, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.EventStart, new { @type = "time", @title = "Event Start (Required)", data_toggle = "tooltip" })
+            @Html.LabelFor(m => m.EventFinish)
+            @Html.ValidationMessageFor(m => m.EventFinish, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.EventFinish, new { @type = "time", @title = "Event Finish (Required)", data_toggle = "tooltip" })
+            @Html.LabelFor(m => m.Location)
+            @Html.ValidationMessageFor(m => m.Location, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Location, new { @type = "text", @title = "Location (Required)", data_toggle = "tooltip" })
+            @Html.LabelFor(m => m.Requirements)
+            @Html.ValidationMessageFor(m => m.Requirements, "", new { @class = "text-danger" })
+            @Html.TextAreaFor(m => m.Requirements, new { @type = "text", @title = "Requirements (Required)", data_toggle = "tooltip" })
+            @Html.LabelFor(m => m.SpecialRequests)
+            @Html.ValidationMessageFor(m => m.SpecialRequests, "", new { @class = "text-danger" })
+            @Html.TextAreaFor(m => m.SpecialRequests, new { @type = "text", @title = "Special Requests (Optional)", data_toggle = "tooltip" })
+            @Html.TextBoxFor(m => m.EntertainmentId, new { @type = "hidden", @Value = Model.EntertainmentId })
+            @Html.TextBoxFor(m => m.VenueId, new { @type = "hidden", @Value = Model.VenueId })
+            <input type="submit" value="Book" />
+        }
+    </section>
+</div>
+<div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>

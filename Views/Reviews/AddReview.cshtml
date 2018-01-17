@@ -1,0 +1,31 @@
+﻿@model TheAgency.Models.ReviewsModel
+
+<div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>
+<section id="reviewForm" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+    <h1 class="heading">Review for @ViewBag.Company</h1>
+    @using (Html.BeginForm("SaveReview", "Reviews", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+            @Html.ValidationMessageFor(m => m.Professionalism, "", new { @class = "text-danger" })
+            @Html.LabelFor(m => m.Professionalism, "Professionalism");
+            @Html.DropDownListFor(m => m.Professionalism, Model.GetProfessionalismRatings, "")
+            @Html.ValidationMessageFor(m => m.ValueForMoney, "", new { @class = "text-danger" })
+            @Html.LabelFor(m => m.ValueForMoney, "Value For Money");
+            @Html.DropDownListFor(m => m.ValueForMoney, Model.GetValueForMoneyRatings, "")
+            @Html.ValidationMessageFor(m => m.Enjoyment, "", new { @class = "text-danger" })
+            @Html.LabelFor(m => m.Enjoyment, "Enjoyment");
+            @Html.DropDownListFor(m => m.Enjoyment, Model.GetEnjoymentRatings, "")
+            @Html.ValidationMessageFor(m => m.Attire, "", new { @class = "text-danger" })
+            @Html.LabelFor(m => m.Attire, "Attire");
+            @Html.DropDownListFor(m => m.Attire, Model.GetAttireRatings, "")
+        </div>
+        <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
+            @Html.ValidationMessageFor(m => m.Comments, "", new { @class = "text-danger" })
+            @Html.LabelFor(m => m.Comments);
+            @Html.TextAreaFor(m => m.Comments, new { @type = "text", @placeholder = "Comments" })
+            @Html.TextBoxFor(m => m.UserId, new { Value = @ViewBag.Id, @style="display:none;" })
+        </div>
+        <input type="submit" value="Submit Review" />
+    }
+</section>

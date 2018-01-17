@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Register New Account";
+}
+<h1 class="heading">
+    @ViewBag.Title
+</h1>
+<hr/>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        @Html.Partial("../Forms/_Register")
+    </div>
+    @*<div class="col-md-4">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>*@
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

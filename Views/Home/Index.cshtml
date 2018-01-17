@@ -1,0 +1,35 @@
+﻿@using TheAgency.Models
+@model TheAgency.Models.SearchModels.SearchViewModel
+<div class="search-box col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right">
+    @using (Html.BeginForm("Search", "Search", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <h1>
+            Quick Search
+        </h1>
+        @Html.AntiForgeryToken()
+        @Html.ValidationMessageFor(s => s.I_Am, "", new { @class = "text-danger" })
+        @Html.DropDownListFor(s => s.I_Am, Model.I_Am_List, "I am...", new { @class="custom-dropdown col-lg-12" })
+        @Html.ValidationMessageFor(s => s.Looking_For, "", new { @class = "text-danger" })
+        @Html.DropDownListFor(s => s.Looking_For, Model.Looking_For_List, "Looking For...", new { @class = "custom-dropdown col-lg-12" })
+        @Html.ValidationMessageFor(s => s.Location, "", new { @class = "text-danger" })
+        @Html.TextBoxFor(s => s.Location, new { @type = "search", @placeholder = "Location", @class= "custom-text-input col-lg-12", id = "Location" })
+        <input type="submit" value="Search" class="custom-text-button col-lg-12 col-md-12" />
+        <br /><br />
+    }
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        setTimeout(function () {
+            $("#Location").autocomplete({
+                minLength: 3,
+                source:[
+                    @foreach (var town in @ViewBag.Towns)
+                    {
+                        @Html.Raw("\"" + town.Town.ToString() + "\",")
+                    }
+                ]
+            });
+        }, 2000);
+    });
+</script>

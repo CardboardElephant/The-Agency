@@ -1,0 +1,67 @@
+﻿@using TheAgency.Models
+<div>
+    <h1 class="main-header">
+        Entertainments Profiles
+    </h1>
+    <hr/>
+    <div class="profile-body">
+        <dl class="dl-headings col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <dd class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                
+            </dd>
+            <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                Company
+            </dd>
+            <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                Town / City
+            </dd>
+            <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                County
+            </dd>
+            <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                Headline
+            </dd>
+            <dd class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+            </dd>
+            <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            </dd>
+        </dl>
+        <hr/>
+        @foreach (var item in Model)
+        {
+            //if (item.FileType == 1)
+            //{
+                <dl class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <dd class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <img src="@item.Image" />
+                    </dd>
+                    <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        @item.CompanyName
+                    </dd>
+                    <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        @item.TownCity
+                    </dd>
+                    <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        @item.County
+                    </dd>
+                    <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        @item.Headline
+                    </dd>
+                    <dd class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <a href="~/Profile/ShowProfile/@item.UserId">
+                            More...
+                        </a>
+                    </dd>
+                    <dd class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        @using (Html.BeginForm("", "Booking", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="EntertainmentId" value="@item.UserId" />
+                            <button type="submit" class="book-company-small btn">Book @item.CompanyName</button>
+                        }
+                    </dd>
+                </dl>
+            @*}*@
+        }
+    </div>
+</div>

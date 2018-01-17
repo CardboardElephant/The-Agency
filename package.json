@@ -1,0 +1,23 @@
+{
+  "author": "Lloyd Corke",
+  "description": "The Agency",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concat-css": "^0.3.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "license": "ISC",
+  "name": "cardboard_elephant",
+  "version": "1.0.0",
+  "dependencies": {
+    "@types/lodash": "^4.14.67",
+    "lodash": "^4.17.4",
+    "npm": "^5.0.4"
+  }
+}

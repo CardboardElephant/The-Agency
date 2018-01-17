@@ -1,0 +1,34 @@
+﻿@model TheAgency.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                There are no external authentication services configured.
+            </p>
+        </div>
+    }
+    else {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in loginProviders)
+                    {
+                        if (p.AuthenticationType == "Twitter" || p.AuthenticationType == "Microsoft")
+                        {
+                            <button type="submit" disabled class="btn btn-default tooltips" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" data-toggle="tooltip" title="Log in using your @p.Caption account"></button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-default tooltips" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" data-toggle="tooltip" title="Log in using your @p.Caption account"></button>
+                        }
+                    }
+                    <button type="submit" disabled class="btn btn-default tooltips" id="LinkedIn" name="provider" value="LinkedIn" data-toggle="tooltip" title="Log in using your LinkedIn account"></button>
+                    <button type="submit" disabled class="btn btn-default tooltips" id="GitHub" name="provider" value="GitHub" data-toggle="tooltip" title="Log in using your GitHub account"></button>
+                </p>
+            </div>
+        }
+    }
+}

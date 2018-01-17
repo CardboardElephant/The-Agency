@@ -1,0 +1,210 @@
+﻿@model TheAgency.Models.Profile
+@{
+    ViewBag.Title = "Manage - " + ViewBag.CompanyName;
+}
+<div id="initial-overlay" class="initial-overlay">
+    <p>
+        Loading...
+    </p>
+</div>
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div class="account-settings col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <h1>Change your Account Settings</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Company Logo:</dt>
+        @if (ViewBag.Base64String != "")
+        {
+            <dd>
+                    <img alt="@ViewBag.CompanyName" title="@ViewBag.CompanyName" src="@ViewBag.Base64String" class="avatar" />
+            </dd>
+        }
+        else
+        {
+            <dd>
+                @*@using (Html.BeginForm("UpdateProfileImage", "Manage", FormMethod.Post, new { enctype = "multipart/form-data", @class = "add-profile-image form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.LabelFor(m => m.PrimaryImage, "Click to Add Company Logo", new { @id = "primary-image-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Primary Image (Optional)", data_toggle = "tooltip" })
+                    @Html.TextBoxFor(m => m.PrimaryImage, new { @class = "hidden", @type = "file", @accept = "image/*" })
+                    <input type="hidden" value="@ViewBag.UserId" name="UserId" />
+                    <input class="updateProfileImage" type="submit" value="Update Profile" />
+                }*@
+            </dd>
+        }
+        <dt>UserName:</dt>
+        <dd>
+            @ViewBag.Details.UserName
+        </dd>
+        <dt>Email Address:</dt>
+        <dd>
+            @ViewBag.Details.EmailAddress
+        </dd>
+        <dt>Password:</dt>
+        <dd>
+            @if (ViewBag.Details.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword", "", new { @class = "profile-btn" })
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword", "", new { @class = "profile-btn" })
+            }
+        </dd>
+        <dt>External Logins:</dt>
+        <dd>
+            @{string link = "Manage ( " + @ViewBag.Details.Logins.Count + " )"; }
+            @Html.ActionLink(link, "ManageLogins", "", new { @class = "profile-btn" })
+        </dd>
+        <dt>Phone Number:</dt>
+        <dd>
+            @(ViewBag.Details.PhoneNumber ?? "None")
+            @if (ViewBag.Details.PhoneNumber != null)
+            {
+                @: &nbsp;&nbsp;
+                @Html.ActionLink("Change", "AddPhoneNumber", "", new { @class = "profile-btn" })
+                @: &nbsp;|&nbsp;
+                @Html.ActionLink("Remove", "RemovePhoneNumber", "", new { @class = "profile-btn" })
+            }
+            else
+            {
+                @Html.ActionLink("Add", "AddPhoneNumber", "", new { @class = "profile-btn" })
+            }
+        </dd>
+        <dt>Two-Factor Authentication:</dt>
+        <dd>
+            @if (ViewBag.Details.TwoFactor)
+            {
+                using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <text>Enabled
+                        <input type="submit" value="Disable" class="btn profile-btn" />
+                    </text>
+                }
+            }
+            else
+            {
+                using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <text>Disabled
+                        <input type="submit" value="Enable" class="btn profile-btn" />
+                    </text>
+                }
+            }
+        </dd>
+    </dl>
+</div>
+<div class="profile-settings col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <h1>Edit Your Profile</h1>
+    <hr />
+    
+    @using (Html.BeginForm("UpdateProfile", "Manage", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationMessageFor(m => m.Headline, "", new { @class = "text-danger" })
+        @Html.TextBoxFor(m => m.Headline, new { @type = "text", @title = "Headline", @placeholder = "Headline", data_toggle = "tooltip", Value = ViewBag.Profile.Headline ?? String.Empty })
+        @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+        @Html.TextAreaFor(m => m.Content, new { @type = "text", @title = "Content", @placeholder = "Content", data_toggle = "tooltip" })
+        <br/>
+        @Html.LabelFor(m => m.PrimaryImage, new { @id = "primary-image-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Primary Image (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.PrimaryImage, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        @Html.LabelFor(m => m.Image_01, new { @id = "image-01-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 01 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_01, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        @Html.LabelFor(m => m.Image_02, new { @id = "image-02-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 02 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_02, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        @Html.LabelFor(m => m.Image_03, new { @id = "image-03-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 03 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_03, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        @Html.LabelFor(m => m.Image_04, new { @id = "image-04-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 04 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_04, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        @Html.LabelFor(m => m.Image_05, new { @id = "image-05-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 05 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_05, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        @Html.LabelFor(m => m.Image_06, new { @id = "image-06-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 06 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_06, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        @Html.LabelFor(m => m.Image_07, new { @id = "image-07-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 07 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_07, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        @Html.LabelFor(m => m.Image_08, new { @id = "image-08-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 08 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_08, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+        @Html.LabelFor(m => m.Image_09, new { @id = "image-09-upload-label", @class = "col-lg-5 col-md-5 col-sm-5 col-xs-5", @title = "Image 09 (Optional)", data_toggle = "tooltip" })
+        @Html.TextBoxFor(m => m.Image_09, new { @class = "hidden", @type = "file", @accept = "image/*" })
+        <input type="hidden" value="@ViewBag.UserId" name="UserId" />
+        <input type="submit" value="Update Profile" />
+    }
+    <img src="@ViewBag.PrimaryImage" />
+</div>
+
+<style>
+    .initial-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.25);
+        background-image: url('../../Images/general_logos/loading.gif');
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 10000;
+    }
+    .initial-overlay p {
+        position: absolute;
+        width: 140px;
+        height: 194px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto auto;
+        font-size: 48px;
+        vertical-align: middle;
+        text-align: center;
+        color: #000000;
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        setTimeout(function () {
+            $('[type=file]').on({
+                change: function () {
+                    var file = this.files[0];
+                    if (file.size > 2048000) {
+                        $(this).val('');
+                        $(this).prev().prev().addClass("error").text("Image must be under 2MB. It is " + Math.round(file.size / 1000) + "MB.");
+                    } else if (file.type != 'image/jpeg' && file.type != 'image/png') {
+                        $(this).val('');
+                        $(this).prev().prev().addClass("error").text("Image must be either a jpg or png file.");
+                    } else {
+                        $(this).prev().prev().removeClass("error").text("File to upload: " + file.name);
+                    }
+                }
+            });
+            @if (ViewBag.Profile.Content != null)
+            {
+                <text>
+                    var contentText = "@ViewBag.Profile.Content.Replace(System.Environment.NewLine, "_RN_")";
+                    $('#Content').text(contentText.replace(/_RN_/g, "\r\n"));
+                </text>
+            }
+            @for (int i=0; i< ViewBag.Images.Count; i++){
+                if(!String.IsNullOrEmpty(ViewBag.Images[i].FileName))
+                {
+                    <text>
+                        $('.profile-settings label').eq(@i).text("Click to change @ViewBag.Images[i].FileName");
+                    </text>
+                } else
+                {
+                    break;
+                }
+            }
+            $('#initial-overlay').stop(true, true).fadeOut(250, function () {
+                $(this).remove();
+            });
+        }, 2000);
+    });
+</script>

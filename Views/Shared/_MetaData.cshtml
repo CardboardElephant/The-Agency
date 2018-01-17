@@ -1,0 +1,64 @@
+﻿@{
+    string title = HttpContext.Current.Request.Url.AbsoluteUri.Contains("home") ? "Home" : ViewBag.Title;
+}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name='keywords' content="The Agency Online" />
+<meta name='title' content="The Agency Online" />
+<meta name='description' content="@title - The Agency Online" />
+<meta name='author' content="The Agency Online" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Expires" content="31" />
+
+<meta name="twitter:card" content="~/Images/general_logos/t-a-o.png">
+<meta name="twitter:site" content="The Agency Online">
+<meta name="twitter:title" content="The Agency Online">
+<meta name="twitter:description" content="From Brochure Websites to Integrated Systems, we have you covered, whatever your needs." />
+<meta name="twitter:creator" content="The Agency Online">
+<meta name="twitter:image:src" content="~/Images/cardboard-elephant-header-right.png">
+
+<meta property="og:title" content="The Agency Online" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.theagencyonline.com" />
+<meta property="og:image" content="~/Images/general_logos/t-a-o.png" />
+<meta property="og:description" content="The Agency Online" />
+<meta property="og:site_name" content="The Agency Online" />
+<meta property="fb:app_id" content="" />
+
+<meta property="article:published_time" content="2017-04-03T23:59:59+01:00" />
+<meta property="article:modified_time" content="2017-04-03T23:59:59+01:00" />
+<meta property="article:section" content="The Agency Online" />
+<meta property="article:tag" content="The Agency Online" />
+
+<meta name="wot-verification" content="5e4581f4fb76cb514ce2" />
+
+<meta name="DC.Title" content="The Agency Online">
+<meta name="DC.Creator" content="The Agency Online">
+<meta name="DC.Subject" content="The Agency Online">
+<meta name="DC.Description" content="The Agency Online" />
+<meta name="DC.Publisher" content="The Agency Online">
+<meta name="DC.Contributor" content="The Agency Online">
+<meta name="DC.Date" content="2017-04-03">
+<meta name="DC.Type" content="Software">
+<meta name="DC.Format" content="Screen">
+<meta name="DC.Identifier" content="The Agency Online">
+<meta name="DC.Language" content="en">
+<meta name="DC.Coverage" content="UK">
+<meta name="DC.Coverage" content="USA">
+<meta name="DC.Coverage" content="Europe">
+<meta name="DC.Rights" content="Allow all">
+
+<link rel="apple-touch-icon" href="~/Images/general_logos/t-a-o.png" />
+<link rel="apple-touch-icon" sizes="64x64" href="~/Images/general_logos/t-a-o-64.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="~/Images/t-a-o-72.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="~/Images/t-a-o-144.png" />
+
+<link rel='image_src' href='~/Images/general_logos/t-a-o-64.png' />
+<link rel="icon" type="image/png" href="~/Images/general_logos/t-a-o-64.png" />
+<link rel="canonical" href="@HttpContext.Current.Request.Url.AbsoluteUri" />
+<title>@ViewBag.Title - The Agency Online</title>
+@Styles.Render("~/Styles/styles.css")
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+@*<link rel="stylesheet" href="fontawesome-stars.css">*@
+@Scripts.Render("~/bundles/modernizr")
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0Ja9p1fuiGlKchAJs-Rjh_ymjxH5n0BY"></script>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @{ Html.RenderPartial("~/Views/Shared/_MetaData.cshtml"); }
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                @Html.ActionLink("The Agency Online", "", new { controller = "Home" }, new { @class = "header", id = "header" })
+                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Entertainments", "Index", "Profile")</li>
+                    <li>@Html.ActionLink("Search", "Index", "Search")</li>
+                    <li>@Html.ActionLink("Events", "Index", "Events")</li>
+                    <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Designed and Developed by <a target="_blank" href="https://www.cardboardelephant.com" data-toggle="tooltip" class="tooltips" title="Cardboard Elephant">Cardboard Elephant</a></p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts", required: false)
+    <script>
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "https://" +  document.location.host + "/Scripts/Final/js.js";
+            document.body.appendChild(element);
+        }
+        if (window.addEventListener) {
+            window.addEventListener("load", downloadJSAtOnload, false);
+        } else if (window.attachEvent) {
+            window.attachEvent("onload", downloadJSAtOnload);
+        } else {
+            window.onload = downloadJSAtOnload;
+        }
+        function load_css_async(filename) {
+            var cb = function () {
+                var l = document.createElement('link'); l.rel = 'stylesheet';
+                l.href = filename;
+                var h = document.getElementsByTagName('head')[0];
+                h.parentNode.insertBefore(l, h);
+            };
+            var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+            if (raf) {
+                raf(cb);
+            } else {
+                window.addEventListener('load', cb);
+            }
+        }
+    </script>
+</body>
+</html>

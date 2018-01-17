@@ -1,0 +1,149 @@
+﻿@using TheAgency.Models
+@model TheAgency.Models.ShowProfileModel
+<div>
+    @using (Html.BeginForm("", "Booking", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="EntertainmentId" value="@Model.ImageFiles[0].UserId" />
+        <button type="submit" class="book-company navbar-right btn">Book @Model.ent.CompanyName</button>
+    }
+    <h1 class="main-profile-header">
+        @Model.ent.CompanyName
+    </h1>
+    <hr />
+    <div class="profile-body">
+        <h2>
+            @Model.pvmList.Headline
+        </h2>
+        <p class="profile-content">
+            @Model.pvmList.Content
+        </p>
+        <hr />
+        @if (Model.ImageFiles.Count > 1)
+        {
+            <div class="profile-images">
+                @foreach (var item in Model.ImageFiles)
+                {
+                    if (item.FileType == 2)
+                    {
+                        <img src="@item.FileName" />
+                    }
+                }
+            </div>
+            <div class="main-image" style="background-image: url('@Model.ImageFiles[1].FileName')"></div>
+            <hr />
+        }
+        <h2>
+            Reviews / Ratings
+        </h2>
+        @Html.ActionLink("Add Review", "AddReview/" + @Model.ImageFiles[0].UserId, "Reviews", "", new { @class = "add-review navbar-right btn" });
+        <hr />
+        <div class="reviews">
+            @foreach (var item in Model.VenueReviews)
+            {
+                <dl class="dl-horizontal">
+                    <dt>
+                        Venue
+                    </dt>
+                    <dd>
+                        @item.Venue
+                    </dd>
+                    <dt>
+                        Professionalism
+                    </dt>
+                    <dd>
+                        &nbsp;&nbsp;@item.Professionalism / 10 <span class="scores score_@item.Professionalism"></span>
+                    </dd>
+                    <dt>
+                        ValueForMoney
+                    </dt>
+                    <dd>
+                        &nbsp;&nbsp;@item.ValueForMoney / 10 <span class="scores score_@item.ValueForMoney"></span>
+                    </dd>
+                    <dt>
+                        Enjoyment
+                    </dt>
+                    <dd>
+                        &nbsp;&nbsp;@item.Enjoyment / 10 <span class="scores score_@item.Enjoyment"></span>
+                    </dd>
+                    <dt>
+                        Attire
+                    </dt>
+                    <dd>
+                        &nbsp;&nbsp;@item.Attire / 10 <span class="scores score_@item.Attire"></span>
+                    </dd>
+                    <dt>
+                        Overall
+                    </dt>
+                    <dd>
+                        @{
+                            var overall = item.Professionalism + item.ValueForMoney + item.Enjoyment + item.Attire;
+                        }
+                        @overall / 40
+                        @{
+                            if (overall > 31)
+                            {
+                                <span class="scores score_10"></span>
+                            }
+                            else if (overall > 23)
+                            {
+                                <span class="scores score_8"></span>
+                            }
+                            else if (overall > 15)
+                            {
+                                <span class="scores score_6"></span>
+                            }
+                            else if (overall > 7)
+                            {
+                                <span class="scores score_4"></span>
+                            }
+                            else
+                            {
+                                <span class="scores score_2"></span>
+                            }
+                        }
+                    </dd>
+                    <dt>
+                        Comments
+                    </dt>
+                    <dd class="review-comment">
+                        @item.Comments
+                    </dd>
+                </dl>
+                            }
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        setTimeout(function () {
+            $(".profile-body img").on({
+                mouseover: function (e) {
+                    var $this = $(this);
+                    $('.main-image').css({
+                        backgroundImage: 'url("' + $this.attr('src') + '")'
+                    });
+                }
+            });
+            $(".profile-body .main-image").on({
+                click: function (e) {
+                    var $this = $(this);
+                    ShowImage($this);
+                }
+            });
+        }, 2000);
+    });
+    function ShowImage(obj) {
+        var overlay = $('<div>').addClass('overlay').hide();
+        var img = obj.clone().addClass('overlay-image').attr('title', 'Click image to close.').on({
+            click: function () {
+                overlay.fadeOut(250, function () {
+                    $(this).remove();
+                });
+            }
+        });
+        overlay.append(img);
+        $('body').append(overlay.fadeIn(250));
+    }
+</script>

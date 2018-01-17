@@ -1,0 +1,35 @@
+﻿@using TheAgency.Models
+@model TheAgency.Models.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="main-header">
+            Use our Form
+        </h1>
+        <hr/>
+        <section id="contactForm">
+            <h1 class="heading">Ask us anything....</h1>
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Name, new { @type = "text", @placeholder = "Your Name" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Email, new { @type = "email", @placeholder = "Email Address" })
+                @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @type = "tel", @placeholder = "Your Phone Number" })
+                @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
+                @Html.TextAreaFor(m => m.Message, new { @type = "text", @placeholder = "Your Message" })
+                <input type="submit" value="Send Message" />
+            }
+        </section>
+    </div>
+    <div class="col-md-4">
+        <h1 class="main-header">
+            Use Social Media
+        </h1>
+        <hr/>
+    </div>
+</div>
